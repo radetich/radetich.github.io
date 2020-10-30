@@ -1,0 +1,145 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <title>About Me</title>
+
+
+  </head>
+  
+  <body>
+
+    <nav class="navbar navbar-expand-sm bg-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="mypage_bootstrap.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="projects.html">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="form.html">Form</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signupmodal/login.html">Log-In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tictactoe/tic-tac-toe.html">Tic-Tac-Toe</a>
+        </li>
+      </ul>
+    </nav>
+    <br>
+    
+    <div class="container-fluid">
+
+    <h1>Radetich, Cole</h1>
+
+<br>
+<div class="card">
+  <div class="card-body">
+    <p>I started programming at 8 in Java.</p>
+    <p>I built my first computer at 11.</p>
+    <p>I love computer science because I love learning about how electronics work.</p>
+  </div>
+</div>
+
+<br>
+    <h2>My Professional Profile</h2>
+
+    <br>
+    <a href="https://github.com/radetich">My GitHub</a>
+
+    <br>
+    <img src="https://avatars2.githubusercontent.com/u/56006689?s=460&u=26dbcbb8624eee433a0668aab8d4656af456e08d&v=4" class="rounded-circle" alt="Cole Radetich" width="500" height="500">
+
+<br>
+    <h3>My Favorite Projects</h3>
+    <table style="width:100%">
+        <tr>
+          <td>Name of the Project</td>
+          <td>Technology Used</td>
+        </tr>
+        <tr>
+          <td>Notes</td>
+          <td>Java</td>
+        </tr>
+        <tr>
+          <td>Custom Bootloader for MacOS</td>
+          <td>UFI</td>
+        </tr>
+        <tr>
+          <td>SmartBases Radar Filter</td>
+          <td>Python</td>
+        </tr>
+      </table>
+
+<br>
+    <h3>My Interests</h3>
+
+<br>
+<div class="card-group">
+  <div id = "comp" class="card">
+    <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp13touch-space-select-202005?wid=892&hei=820&&qlt=80&.v=1587460552755" alt="Mac">
+    <div class="card-body">
+      <h5 class="card-title">Computers</h5>
+      <button onclick="addCard(comp)">Add</button>
+    </div>
+  </div>
+  <div id = "ath" class="card">
+    <img class="card-img-top" src="https://i.ytimg.com/vi/j6fWDbPyXlc/maxresdefault.jpg" alt="Rugby">
+    <div class="card-body">
+      <h5 class="card-title">Rugby</h5>
+      <button onclick="addCard(ath)">Add</button>
+    </div>
+  </div>
+  <div id = "rec" class="card">
+    <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/61e78IksQpL._AC_SL1200_.jpg" alt="Weights">
+    <div class="card-body">
+      <h5 class="card-title">Working Out</h5>
+      <button onclick="addCard(rec)">Add</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function addCard(interest)
+  {
+    if(interest == "comp")
+    {
+      var compCard = $('<div id = "compAppend" class = "card"><p>Sample tweet goes here</p><button onclick="deleteCard(comp)">Delete</button></div>');
+      compCard.appendTo('comp');
+    }
+    else if(interest == "ath")
+    {
+      var athCard = $('<div id = "athAppend" class = "card"><p>Sample tweet goes here</p><button onclick="deleteCard(ath)">Delete</button></div>');
+      athCard.appendTo('ath');
+    }
+
+    else if(interest == "rec")
+    {
+      var recCard = $('<div id = "recAppend" class = "card"><p>Sample tweet goes here</p><button onclick="deleteCard(rec)">Delete</button></div>');
+      recCard.appendTo('rec');
+    }
+ 
+  }
+
+  function deleteCard(interest)
+  {
+    if(interest == "comp")
+      document.getElementById('compAppend').remove()
+    else if(interest == "ath")
+      document.getElementById('athAppend').remove()
+    else if(interest == "rec")
+      document.getElementById('recAppend').remove()
+  }
+</script>
+
+</body>
+</html>
